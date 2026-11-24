@@ -1,0 +1,7 @@
+{
+  "model": "v = v0 * exp(-t/tau)",
+  "tau_ms": 224.5,
+  "median_coast_ms": 1081.1,
+  "runs": 15,
+  "fits": 15
+}

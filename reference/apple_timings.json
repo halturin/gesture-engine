@@ -1,0 +1,7 @@
+{
+  "tap_count": 1,
+  "tap_ms_median": 315.0,
+  "tap_ms_p90": 315.0,
+  "tap_ms_max": 315.0,
+  "tap_move_mm_thresh": 3.0
+}

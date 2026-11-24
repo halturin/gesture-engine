@@ -1,0 +1,16 @@
+# build artifacts
+/test_engine
+/test_vs_reference
+/test_config
+/test_mapping
+*.o
+
+# generated from reference/apple_accel.csv by `make lut`
+reference/apple_lut.h
+
+# live capture sessions (the snapshot is committed as reference/raw.tar.gz)
+reference/raw/
+
+# python
+__pycache__/
+*.pyc
