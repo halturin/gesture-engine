@@ -45,6 +45,28 @@ only while coasting, so an idle device does nothing. Input is tagged by source
 two-hand zoom and rotation possible. On a split keyboard the left half is the BLE
 central and sees its own pad directly and the right pad over the split link.
 
+## Two-hand zoom and rotation
+
+A split keyboard carries a touch module under each hand, and the engine treats the
+two pads as one gesture surface. Rest a finger on each pad and move your hands
+apart to zoom in, together to zoom out; move them in opposite directions
+vertically to rotate. This is a gesture a single trackpad cannot offer, and it is
+more comfortable than pinching two fingers on one small pad.
+
+It works because the left half is the BLE central: it sees its own pad directly
+and receives the right pad over the split link, so a single engine instance has
+both streams. Every input event is tagged with its source (left pad or right pad),
+and the gesture layer reads both. The classic single-pad versions are supported
+too: two fingers on one module pinch to zoom and rotate. The two-hand versions are
+the same gestures driven by one finger on each pad, computed from the relative
+motion of the two contacts rather than their absolute positions, so they work even
+on the cooked single-finger stream the stock modules already provide.
+
+Zoom and rotate are separate engine outputs. The mapping layer turns zoom into
+Ctrl+scroll, which most applications read as zoom; rotate is carried for a
+device-specific binding. Toggle the two-hand gestures with the `two_hand_zoom`
+config flag and scale them with `two_hand_zoom_gain`.
+
 ## Build and test
 
 ```
